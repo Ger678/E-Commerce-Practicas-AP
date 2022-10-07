@@ -56,6 +56,8 @@ Este es un repostorio para las practicas colaborativas de Argentina Programa. Co
 ![image](https://user-images.githubusercontent.com/76185921/194557412-04c89fc3-e3a6-43a9-834b-bc6d8daf2ceb.png)
 
 
+En este caso tenemos dos branck develop: Fronted y Backend
+
 
 ### Fork del repositorio
 El primer paso es hacer "Fork" del repositorio. (no es indispensable )
