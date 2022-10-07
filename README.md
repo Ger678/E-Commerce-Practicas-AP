@@ -53,7 +53,8 @@ Este es un repostorio para las practicas colaborativas de Argentina Programa. Co
 * Después de que su trabajo o función haya sido revisado y aprobado, puede fusionarse (merge) con la rama principal.
 * Una vez que su trabajo se haya fusionado con la rama principal, debe implementarse de inmediato (deploy).
 
-![image](https://user-images.githubusercontent.com/76185921/194556193-5d762203-4720-4636-adb7-c72b94f6beb2.png)
+![image](https://user-images.githubusercontent.com/76185921/194557412-04c89fc3-e3a6-43a9-834b-bc6d8daf2ceb.png)
+
 
 
 ### Fork del repositorio
