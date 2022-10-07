@@ -47,7 +47,7 @@ Este es un repostorio para las practicas colaborativas de Argentina Programa. Co
 #### Principios
 
 * Cualquier código en la rama principal debe ser implementable (deployable).
-* Creoe nuevas ramas con nombres descriptivos a partir de la rama principal para nuevos trabajos, como  feature/add-new-payment-types.
+* Creoe nuevas ramas con nombres descriptivos a partir de la rama principal para nuevos trabajos, como add-new-payment-types.
 * Commit regularmente el trabajo al repositorio local y regularmente push el trabajo al reporitorio remoto.
 * Para solicitar comentarios o ayuda, o cuando crea que su trabajo está listo para fusionarse con la rama principal, abra una  pull request.
 * Después de que su trabajo o función haya sido revisado y aprobado, puede fusionarse (merge) con la rama principal.
