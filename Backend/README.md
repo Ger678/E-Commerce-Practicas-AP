@@ -11,7 +11,7 @@ Este es un repostorio para las practicas colaborativas de Argentina Programa. Co
 * Detalle de productos (múltiples opciones de información - mínimo Precio - Foto - Detalle)
 * Carrito de Compra (pasarela de compras también se le llama creo)
 * Administrador de tienda
-* Registro (iniciar seción, cerrar sesión, loggearse)
+* Registro (iniciar sesión, cerrar sesión, loggearse)
 
 ### Tipos de Usuarios
 * Admin (Cliente interno)
