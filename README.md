@@ -43,10 +43,10 @@ Este es un repostorio para las practicas colaborativas de Argentina Programa. Co
 
 ## Cómo colaborar en el proyecto (siendo colaborador)
 
-###Fork del repositorio
+### Fork del repositorio
 El primer paso es hacer "Fork" del repositorio. (no es indispensable )
 
-###Clonar el repositorio
+### Clonar el repositorio
 Después de tener el repositorio en nuestra cuenta, seleccionar la dirección del repositorio "SSH o HTTP" y clonar:
 
 $ git clone https://github.com/User/NombreRepo.git
@@ -68,12 +68,12 @@ Antes de empezar a trabajar, obtener los últimos cambios del Repo Original:
 
 $ git pull -r upstream master
 
-###Crear una Rama
+### Crear una Rama
 Para crear una rama usar la opción "checkout" de git:
 
 $ git checkout -b feature-nombre-rama
 
-###Hacer cambios
+### Hacer cambios
 Realizar todos los cambios que se desea hacer al proyecto.
 
 Agregar los archivos y hacer un commit
@@ -82,10 +82,10 @@ Después de realizar el commit hacer el push hacia nuestro repositorio indicando
 
 $ git push origin feature-nombre-rama
 
-###Hacer un Pull Request
+### Hacer un Pull Request
 Hacer click en "Compare & Pull Request"
 
-###Escribir cambios del Pull Request.
+### Escribir cambios del Pull Request.
 
 Si todo está bien, enviar con el botón "Send Pull Request".
 
