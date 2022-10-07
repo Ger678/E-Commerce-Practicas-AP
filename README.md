@@ -43,6 +43,19 @@ Este es un repostorio para las practicas colaborativas de Argentina Programa. Co
 
 ## Cómo colaborar en el proyecto (siendo colaborador)
 
+### Consideraciones generales de flujo de GitHub
+#### Principios
+
+* Cualquier código en la rama principal debe ser implementable (deployable).
+* Creoe nuevas ramas con nombres descriptivos a partir de la rama principal para nuevos trabajos, como  feature/add-new-payment-types.
+* Commit regularmente el trabajo al repositorio local y regularmente push el trabajo al reporitorio remoto.
+* Para solicitar comentarios o ayuda, o cuando crea que su trabajo está listo para fusionarse con la rama principal, abra una  pull request.
+* Después de que su trabajo o función haya sido revisado y aprobado, puede fusionarse (merge) con la rama principal.
+* Una vez que su trabajo se haya fusionado con la rama principal, debe implementarse de inmediato (deploy).
+
+![image](https://user-images.githubusercontent.com/76185921/194556193-5d762203-4720-4636-adb7-c72b94f6beb2.png)
+
+
 ### Fork del repositorio
 El primer paso es hacer "Fork" del repositorio. (no es indispensable )
 
