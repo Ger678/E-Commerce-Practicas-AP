@@ -4,10 +4,15 @@
  */
 package com.shopAPpracticas.shop.repository;
 
+import com.shopAPpracticas.shop.model.CategoryModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 /**
  *
  * @author pablo
  */
-public interface CategoryRepository {
-    
+@Repository
+public interface CategoryRepository extends JpaRepository <CategoryModel, Long>{
+      
 }

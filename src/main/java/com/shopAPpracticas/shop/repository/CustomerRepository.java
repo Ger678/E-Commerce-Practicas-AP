@@ -4,8 +4,7 @@
  */
 package com.shopAPpracticas.shop.repository;
 
-import com.shopAPpracticas.shop.model.ProductModel;
-
+import com.shopAPpracticas.shop.model.CustomerModel;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,8 +12,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author pablo
  */
-
 @Repository
-public interface ProductRepository extends JpaRepository <ProductModel, Long>{
+public interface CustomerRepository extends JpaRepository <CustomerModel, Long> {
     
 }
