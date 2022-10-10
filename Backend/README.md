@@ -16,7 +16,7 @@ Este es un repostorio para las practicas colaborativas de Argentina Programa. Co
 ### Tipos de Usuarios
 * Admin (Cliente interno)
 * User (Cliente final)
-* Cisitante (aún no se registra)
+* Visitante (aún no se registra)
 
 ### Características Importantes
 * CRUD de productos
