@@ -1,15 +1,38 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from '../service/rest.service';
+
 
 @Component({
   selector: 'app-product-pages',
   templateUrl: './product-pages.component.html',
-  styleUrls: ['./product-pages.component.css']
+  styleUrls: ['./product-pages.component.css'],
 })
 export class ProductPagesComponent implements OnInit {
+  public product: any = [];
+  public images: any = [];
+  public id: number = 14;
 
-  constructor() { }
+  constructor(private restService: RestService) {}
 
   ngOnInit(): void {
+    this.productDetails(this.id)
+    this.imagesOfProducts(this.id)
   }
 
+  public productDetails(id: number) {
+    this.restService
+      .get(`https://dummyjson.com/products/${id}`)
+      .subscribe((data) => {
+        this.product = data;
+      });
+  }
+
+  public imagesOfProducts(id: number){
+    this.restService
+    .get(`https://dummyjson.com/products/${id}?select=images`)
+    .subscribe((data) => {
+      this.images = Object.values(data);
+      console.log(this.images)
+    })
+  }
 }
