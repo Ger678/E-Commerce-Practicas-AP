@@ -8,7 +8,7 @@
     </form>
 </div>
 <!-- Celulares -->
-<div id="category" class="my-5 mx-3 d-flex" style="height: 80px" >
+<div id="category" class="my-5 mx-3 d-flex" >
     <div id="category-item" class="mx-3 row" *ngFor="let products of listOfProducts[0]" >       
         <img src={{products.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
         <p class="text-center" style="font-size: x-small">{{products.title}}</p>
@@ -22,6 +22,15 @@
         <img src={{singleProduct.thumbnail}} class="card-img-top" alt={{singleProduct.title}}>
         <div class="card-body">
             <p class="card-text">{{singleProduct.description}}</p>
+        </div>
+    </div>
+</div>
+
+<div *ngFor="let products of listOfProducts[0]" class="d-flex justify-content-center my-3">
+    <div class="card shadow" style="width: 18rem;">
+        <img src={{products.thumbnail}} class="card-img-top" alt={{products.title}}>
+        <div class="card-body">
+            <p class="card-text">{{products.description}}</p>
         </div>
     </div>
 </div>
