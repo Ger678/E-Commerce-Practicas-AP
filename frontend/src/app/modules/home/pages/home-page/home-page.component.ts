@@ -18,7 +18,7 @@ export class HomePageComponent implements OnInit {
   } 
 
   public cargarDataOfProducts(){
-    this.restService.get('https://dummyjson.com/products/search?q=phone').subscribe(data => {
+    this.restService.get('https://dummyjson.com/products/?limit=10').subscribe(data => {
       this.listOfProducts = Object.values(data);
       console.log(this.listOfProducts)
     })

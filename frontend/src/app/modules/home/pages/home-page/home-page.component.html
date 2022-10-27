@@ -9,7 +9,7 @@
 </div>
 <!-- Celulares -->
 <div id="category" class="my-5 mx-3 d-flex" style="height: 80px" >
-    <div  class="mx-3 row" *ngFor="let products of listOfProducts[0]" >       
+    <div id="category-item" class="mx-3 row" *ngFor="let products of listOfProducts[0]" >       
         <img src={{products.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
         <p class="text-center" style="font-size: x-small">{{products.title}}</p>
     </div>
