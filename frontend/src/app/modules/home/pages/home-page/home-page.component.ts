@@ -8,16 +8,28 @@ import { RestService } from '../../service/rest.service';
 })
 export class HomePageComponent implements OnInit {
   public listOfProducts: any = [];
+  public singleProduct: any = [];
 
   constructor(private restService: RestService) { }
 
   ngOnInit(): void {
-    this.cargarData();
+  this.cargarDataOfProducts(); // productos de telefonos
+  this.cargarDataOfSeveralProducts(2);
   } 
 
-  public cargarData(){
+  public cargarDataOfProducts(){
     this.restService.get('https://dummyjson.com/products/search?q=phone').subscribe(data => {
-      this.listOfProducts = data;
+      this.listOfProducts = Object.values(data);
+      console.log(this.listOfProducts)
+    })
+  
+  }
+  public cargarDataOfSeveralProducts(id: number){
+    this.restService.get(`https://dummyjson.com/products/${id}`).subscribe(data => {
+      this.singleProduct = data;
+      console.log(this.singleProduct)
     })
   }
+
+
 }

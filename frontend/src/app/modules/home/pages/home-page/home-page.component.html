@@ -1,5 +1,5 @@
 <!-- Home imagen -->
-<img src="assets/Home.png">
+<img src="assets/Home.png" class="mt-5">
 <!-- Search Inpunt -->
 <div class="container-fluid">
     <form class="d-flex" role="search">
@@ -8,23 +8,20 @@
     </form>
 </div>
 <!-- Celulares -->
-<div id="" class="m-3 row" *ngFor="let products of listOfProducts">
-    <div class="mx-1" style="border-radius:50%; width: 60px; height:60px; background: grey">
-        <img src={{products.thumbnail}}>
-        <p>{{products.id}}</p>
+<div id="category" class="my-5 mx-3 d-flex" style="height: 80px" >
+    <div  class="mx-3 row" *ngFor="let products of listOfProducts[0]" >       
+        <img src={{products.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
+        <p class="text-center" style="font-size: x-small">{{products.title}}</p>
     </div>
+    
 </div>
 
 <!-- Cards -->
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-</div>
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+<div ngModel="singleProduct" class="d-flex justify-content-center my-3">
+    <div class="card shadow" style="width: 18rem;">
+        <img src={{singleProduct.thumbnail}} class="card-img-top" alt={{singleProduct.title}}>
+        <div class="card-body">
+            <p class="card-text">{{singleProduct.description}}</p>
+        </div>
     </div>
 </div>
