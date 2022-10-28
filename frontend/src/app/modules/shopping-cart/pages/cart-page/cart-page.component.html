@@ -1,2 +1,79 @@
-<div class="mb-5"></div> <!--Esto es por el navbar-->
-<p>cart-page works!</p>
+<div class="mb-5" style="height:30px"></div> <!--Esto es por el navbar-->
+
+<!-- Componente de Producto en el shopping cart -->
+<div ngModel="cartProduct" class="row mx-4 my-3 rounded shadow" style="height: auto; width:auto; background-color: rgb(223, 223, 223)">
+    <div class="col m-2">
+        <h2 class="text-uppercase my-2">{{cartProduct.title}}</h2>
+        <p>{{cartProduct.description}}</p>
+        <div class="d-flex">
+            <!-- Inicio del Contador -->
+            <div class="rounded d-flex"
+                style="background: rgb(0, 106, 255); width:60px; height:30px; justify-content: space-between; align-items: center; padding: 5px;">
+                <button (click)="removeAmount()" style="background: none; border: none; display: contents;">
+                    <svg class="justify-content-end" style="color:aliceblue" xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                        <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                    </svg>
+                </button>
+                <h6 style="color:aliceblue; padding:5px;display: contents;">{{amount}}</h6>
+                <button (click)="addAmount()" style="background: none; border: none; display: contents;">
+                    <svg style="color:aliceblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                        <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>
+                </button>
+            </div>
+            <!-- Fin del contador -->
+            <h5 class="mx-2">${{price}}.99</h5>
+        </div>
+    </div>
+    <img class="col img-thumbnail m-2" style="width:80px; height:auto" src={{cartProduct.thumbnail}}>
+</div>
+
+
+<!-- Bottom buttons -->
+<div class="fixed-bottom">
+    <div class="d-grid gap-2 d-md-flex align-self-end my-3 mx-3" style="height:55px">
+        <button class="btn btn-success me-md-2 h-100" type="button">Button</button>
+    </div>
+</div>
+
+<!--TODO Modal cambiar a un componente-->
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header" ngModel="cartProduct">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{{cartProduct.title}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img class="img-fluid" src={{cartProduct.thumbnail}}>
+          <div class="card-body">
+            <p>{{cartProduct.category}}</p>
+            <h3 class="card-subtitle">${{cartProduct.price}}.00</h3>
+            <h4 class="card-content">{{cartProduct.description}}</h4>
+            
+            <!-- carousel de imagens -->
+            <div class="carousel-container">
+                <div *ngFor="let img of images[1]" >
+                    <img ngModel="product" src={{img}} class="carousel-images rounded">
+                </div>
+            </div>
+            <!-- carousel de imagens -->
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
