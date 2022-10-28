@@ -24,23 +24,24 @@ import lombok.Setter;
 @Entity
 @Getter @Setter
 @Table(name="categories")
+
 public class CategoryModel implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    
+
     private int category_id;
     private String category_name;
 
     public CategoryModel() {
     }
-    
+
     public CategoryModel(int category_id, String category_name) {
         this.category_id = category_id;
         this.category_name = category_name;
     }
-    
-    @OneToMany(fetch = FetchType.LAZY, mappedBy="category")
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy="product_category")
     private List<ProductModel> product;
-        
+
 }

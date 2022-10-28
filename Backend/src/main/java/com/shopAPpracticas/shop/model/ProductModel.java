@@ -27,10 +27,10 @@ import lombok.Setter;
 @Table(name="product")
 
 public class ProductModel implements Serializable {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    
+
     private int product_id;
     private String product_name;
     private String product_brand;
@@ -43,7 +43,7 @@ public class ProductModel implements Serializable {
     private float product_price;
     private String product_size;
     private String product_stock;
-    private String product_type;
+    //private String product_type;
 
     public ProductModel() {
     }
@@ -61,13 +61,13 @@ public class ProductModel implements Serializable {
         this.product_price = product_price;
         this.product_size = product_size;
         this.product_stock = product_stock;
-        this.product_type = product_type;
+        //this.product_type = product_type;
     }
-    
+
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonIgnore()
-    @JoinColumn ( name = "category_id") 
+    @JoinColumn ( name = "category_id")
     private CategoryModel category;
-    
-    
+
+
 }
