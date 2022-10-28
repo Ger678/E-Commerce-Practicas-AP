@@ -8,7 +8,7 @@ import { RestService } from '../../service/rest.service';
 })
 export class CartPageComponent implements OnInit {
   public cartProduct: any = [];
-  public id: number = 2;
+  public id: number = 15;
   public amount: number = 1;
   public price: number = this.cartProduct.price;
   public images: any = [];
@@ -63,7 +63,7 @@ export class CartPageComponent implements OnInit {
           element.style.background = '#2B2B2B';
           element.style.color = '#DEDEDE';
       } */
-      
+
       // FIXME: agregar la clase '.checked' para cada star con el valor de rating
       for (let i = 0; i < rating; i++) {
         let  element = stars[i];
