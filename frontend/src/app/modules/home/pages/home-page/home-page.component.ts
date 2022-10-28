@@ -39,4 +39,5 @@ export class HomePageComponent implements OnInit {
       });
   }
   //TODO probablemente esto debería estar en un servicio
+  // Rama German
 }
