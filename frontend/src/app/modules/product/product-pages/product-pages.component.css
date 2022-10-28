@@ -1,11 +1,11 @@
-#container {
+.carousel-container {
     display: flex;
     gap: 12px;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
     scroll-padding: 24px;
 }
-#container #images{
+.carousel-container .carousel-images{
     flex: 0 0 100%;
     padding: 24px;
     scroll-snap-align: start;
