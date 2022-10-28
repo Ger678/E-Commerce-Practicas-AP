@@ -54,7 +54,7 @@
           <div class="card-body">
             <p>{{cartProduct.category}}</p>
             <!-- Puntaje de estrellas -->
-            <div>
+            <div class="float-start">
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star checked"></span>
               <span class="fa fa-star checked"></span>
@@ -62,8 +62,8 @@
               <span class="fa fa-star"></span>
             </div>
             <!-- Puntaje de estrellas -->
-            <h3 class="card-subtitle">${{cartProduct.price}}.00</h3>
-            <h4 class="card-content">{{cartProduct.description}}</h4>
+            <h3 class="card-subtitle float-end align-self-end" style="font-size:30px; color:rgb(144, 144, 144)">${{cartProduct.price}}.00</h3>
+            <h5 class="card-content d-inline-block my-4">{{cartProduct.description}}</h5>
             
             <!-- carousel de imagens -->
             <div class="carousel-container">
