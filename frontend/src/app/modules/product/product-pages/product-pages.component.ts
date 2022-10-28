@@ -10,7 +10,7 @@ import { RestService } from '../service/rest.service';
 export class ProductPagesComponent implements OnInit {
   public product: any = [];
   public images: any = [];
-  public id: number = 14;
+  public id: number = 9;
 
   constructor(private restService: RestService) {}
 
@@ -34,5 +34,15 @@ export class ProductPagesComponent implements OnInit {
       this.images = Object.values(data);
       console.log(this.images)
     })
+  }
+
+  public next(){
+    this.id = this.id + 1;
+    console.log(this.id)
+  }
+  
+  public previous(){
+    this.id = this.id - 1;
+    console.log(this.id)
   }
 }

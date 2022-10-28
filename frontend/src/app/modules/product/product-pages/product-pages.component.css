@@ -9,4 +9,5 @@
     flex: 0 0 100%;
     padding: 24px;
     scroll-snap-align: start;
+    width: 350px;
 }
