@@ -13,11 +13,11 @@ import java.util.Optional;
  * @author pablo
  */
 public interface IProductService {
-    
+
     public List<ProductModel> listProducts();
     public Optional<ProductModel> getOne(ProductModel product);
     public void saveProduct(ProductModel product);
     public void deleteProduct(Long id);
     public ProductModel findProductById(Long id);
-     
+
 }

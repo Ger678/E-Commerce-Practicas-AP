@@ -4,11 +4,9 @@
  */
 package com.shopAPpracticas.shop.services;
 
-import com.shopAPpracticas.shop.model.ProductModel;
-import com.shopAPpracticas.shop.repository.ProductRepository;
-
+import com.shopAPpracticas.shop.model.CustomerModel;
+import com.shopAPpracticas.shop.repository.CustomerRepository;
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,35 +14,29 @@ import org.springframework.stereotype.Service;
  *
  * @author pablo
  */
-
 @Service
-public class ProductService implements IProductService {
+public class CustomerService implements ICustomerService{
 
     @Autowired
-    ProductRepository ProductRepo;
+    CustomerRepository customers;
 
     @Override
-    public List<ProductModel> listProducts() {
-        return ProductRepo.findAll();
+    public List<CustomerModel> listCustomers() {
+        return customers.findAll();
     }
 
     @Override
-    public void saveProduct(ProductModel product) {
-        ProductRepo.save(product);
-    }
-
-    @Override
-    public void deleteProduct(Long id) {
-        ProductRepo.deleteById(id);
-    }
-
-    @Override
-    public Optional<ProductModel> getOne(ProductModel product) {
+    public void saveCustomer(CustomerModel customer) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    public ProductModel findProductById(Long id) {
+    public void deleteCustomer(Long id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public CustomerModel findCustomerById(Long id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
