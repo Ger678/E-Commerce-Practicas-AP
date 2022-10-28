@@ -1,4 +1,4 @@
-<div class="mb-5"></div>
+<div class="mb-5"></div> <!--Esto es por el navbar-->
 <!-- Home imagen -->
 <img src="assets/Home.png" class="my-5">
 <!-- Search Inpunt -->
@@ -10,11 +10,11 @@
 </div>
 <!-- Celulares -->
 <div id="category" class="my-5 mx-3 d-flex" >
-    <div id="category-item" class="mx-3 row" *ngFor="let products of listOfProducts[0]" >       
+    <div id="category-item" class="mx-3 row" *ngFor="let products of listOfProducts[0]" >
         <img src={{products.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
         <p class="text-center" style="font-size: x-small">{{products.title}}</p>
     </div>
-    
+
 </div>
 
 <!-- Cards -->
@@ -35,3 +35,6 @@
         </div>
     </div>
 </div>
+
+//TODO faltaría modularizar en varios sub componentes
+//TODO deberíamos intentar unificar nombres, inglés, español? detallado, resumido, etc

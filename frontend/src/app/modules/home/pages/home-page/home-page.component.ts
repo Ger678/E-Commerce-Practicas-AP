@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/core/models/product.model';
 import { RestService } from '../../service/rest.service';
 
 @Component({
@@ -8,7 +9,10 @@ import { RestService } from '../../service/rest.service';
 })
 export class HomePageComponent implements OnInit {
   public listOfProducts: any = [];
+  public listOfProductsModel: Product[] = [];
   public singleProduct: any = [];
+
+  //TODO faltaría model de producto para evitar posibles problemas
 
   constructor(private restService: RestService) {}
 
@@ -22,6 +26,7 @@ export class HomePageComponent implements OnInit {
       .get('https://dummyjson.com/products/?limit=10')
       .subscribe((data) => {
         this.listOfProducts = Object.values(data);
+        this.listOfProductsModel = Object.values(data);
         console.log(this.listOfProducts);
       });
   }
@@ -33,4 +38,5 @@ export class HomePageComponent implements OnInit {
         console.log(this.singleProduct);
       });
   }
+  //TODO probablemente esto debería estar en un servicio
 }

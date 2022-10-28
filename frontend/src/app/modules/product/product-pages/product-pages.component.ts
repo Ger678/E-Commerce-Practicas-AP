@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/core/models/product.model';
 import { RestService } from '../service/rest.service';
 
 
@@ -8,6 +9,7 @@ import { RestService } from '../service/rest.service';
   styleUrls: ['./product-pages.component.css'],
 })
 export class ProductPagesComponent implements OnInit {
+  //public product: Product = {} as Product;
   public product: any = [];
   public images: any = [];
   public id: number = 14;
@@ -23,6 +25,7 @@ export class ProductPagesComponent implements OnInit {
     this.restService
       .get(`https://dummyjson.com/products/${id}`)
       .subscribe((data) => {
+        console.log(data)
         this.product = data;
       });
   }
