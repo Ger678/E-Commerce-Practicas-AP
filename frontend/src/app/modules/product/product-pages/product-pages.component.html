@@ -1,10 +1,27 @@
 <div class="mb-4"></div>
+
+
+<!-- Corrousel of images -->
 <div id="container" class="mx-2 px-5">
     <div *ngFor="let img of images[1]" >
         <img id="images" ngModel="product" src={{img}} class="my-5 shadow rounded">
     </div>
 </div>
-<div class="card-body" ngModel="product">
-    <h1 class="card-title">{{product.title}}</h1>
+<!-- Stars -->
+
+<!-- Title & Description -->
+<div class="card-body mx-5" ngModel="product">
+    <h3 class="card-subtitle float-end" style="font-size:50px">${{product.price}}.00</h3>
+    <h1 class="card-title" style="font-size: 30px;">{{product.title}}</h1>
     <p class="card-text">{{product.description}}</p>
+</div>
+
+<div class="d-flex justify-content-end my-3" role="group" aria-label="Basic mixed styles example">
+    <button type="button" class="btn btn-primary" (click)="previous()"> Prev </button>
+    <button type="button" class="btn btn-primary" (click)="next()"> Next </button>
+</div>
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-end my-3">
+    <button class="btn btn-success me-md-2" type="button">Button</button>
+    <button class="btn btn-outline-primary" type="button">Button</button>
 </div>
