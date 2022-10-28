@@ -4,14 +4,11 @@
  */
 package com.shopAPpracticas.shop.controller;
 
-import com.shopAPpracticas.shop.model.CategoryModel;
-import com.shopAPpracticas.shop.services.ICategoryService;
-
+import com.shopAPpracticas.shop.model.UserModel;
+import com.shopAPpracticas.shop.services.IUserService;
 
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,42 +24,34 @@ import org.springframework.web.bind.annotation.RestController;
  * @author pablo
  */
 
-@RequestMapping("/categories")
+
+@RequestMapping("/user")
 @CrossOrigin
 @RestController
 
-public class CategoryController {
+public class UserController {
     @Autowired
-    private ICategoryService categories;
+    private IUserService users;
 
-    @GetMapping ("/all")
+    @GetMapping("/all")
     @ResponseBody
-    public List<CategoryModel> listCategories(){
-        return categories.listCategories();
+    public List<UserModel> listUser(){
+        return users.listUser();
     }
-
-    @GetMapping ("/search")
-    @ResponseBody
-    public Optional<CategoryModel> searchCategory(@RequestBody CategoryModel category){
-        return categories.getOne(category);
-    } //Probar funcionamiento de búsqueda
 
     @GetMapping ("/view/{id}")
     @ResponseBody
-    public CategoryModel viewCategory(@PathVariable Long id){
-        return categories.findCategoryById(id);
+    public UserModel viewUser(@PathVariable Long id){
+        return users.findUserById(id);
     }
 
-    // @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping ("/new")
-    public void addCategory(@RequestBody CategoryModel category){
-        categories.saveCategory(category);
+    @PostMapping("/add")
+    public void addUser(@RequestBody UserModel user){
+        users.saveUser(user);
     }
 
-    // @PreAuthorize("hasRole('ADMIN')")
-    @DeleteMapping ("/delete/{id}")
-    public void deleteProduct(@PathVariable Long id){
-        categories.deleteCategory(id);
+    @DeleteMapping("/delete/{id}")
+    public void deleteUser(@PathVariable Long id){
+        users.deleteUser(id);
     }
-
 }
