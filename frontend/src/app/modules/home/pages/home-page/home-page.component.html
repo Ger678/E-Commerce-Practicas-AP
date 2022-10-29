@@ -9,10 +9,11 @@
     </form>
 </div>
 <!-- TODO Category  -->
+<button class="btn btn-primary h-25 w-25" (click)="getThumbnailsOfCategory(categoryList)" ></button>
 <div id="category" class="my-5 mx-3 d-flex" >
-    <div id="category-item" class="mx-3 row" *ngFor="let products of listOfProducts[0]" >
-        <img src={{products.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
-        <p class="text-center" style="font-size: x-small">{{products.title}}</p>
+    <div id="category-item" class="mx-3 row" *ngFor="let category of categoryList" >
+        <img ngModel="thumbnailList" src={{thumbnailList.products}}} class="rounded-circle shadow p-0" style=" height: 60px ">
+        <p class="text-center" style="font-size: x-small">{{category}}</p>
     </div>
 </div>
 
