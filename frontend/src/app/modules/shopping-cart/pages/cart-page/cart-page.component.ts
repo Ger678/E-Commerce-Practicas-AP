@@ -10,7 +10,7 @@ export class CartPageComponent implements OnInit {
   public cartProduct: any = [];
   public id: number = 2;
   public amount: number = 1;
-  public price: number = this.cartProduct.price;
+  public price: any = 0;
   public images: any = [];
 
   constructor(private restService: RestService) { }
@@ -19,12 +19,20 @@ export class CartPageComponent implements OnInit {
     this.getData(this.id)
     this.imagesOfProducts(this.id)
     this.ratingStars();
+    this.initialPrice(this.id);
   }
   // Datos del producto con Id
   public getData(id: number){
     this.restService.get(`https://dummyjson.com/products/${id}`).subscribe(data => {
       this.cartProduct = data
     })
+  }
+
+  public initialPrice(id: number){
+    const price = this.restService.get(`https://dummyjson.com/products/${id}?select=price`).subscribe(data => {
+      this.price = data
+    });
+    console.log(this.price)
   }
 
   // Sube la cantidad de productos e incremeta el precio
