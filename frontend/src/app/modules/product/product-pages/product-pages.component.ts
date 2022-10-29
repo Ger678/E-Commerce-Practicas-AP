@@ -9,7 +9,7 @@ import { RestService } from '../service/rest.service';
   styleUrls: ['./product-pages.component.css'],
 })
 export class ProductPagesComponent implements OnInit {
-  //public product: Product = {} as Product;
+  public listOfProducts: any = []; 
   public product: any = [];
   public images: any = [];
   public id: number = 9;
@@ -17,10 +17,12 @@ export class ProductPagesComponent implements OnInit {
   constructor(private restService: RestService) {}
 
   ngOnInit(): void {
-    this.productDetails(this.id)
-    this.imagesOfProducts(this.id)
+    this.productDetails(this.id);
+    this.imagesOfProducts(this.id);
+    this.cargarDataOfProducts();
   }
 
+  //Request for product details || details: price, description,name
   public productDetails(id: number) {
     this.restService
       .get(`https://dummyjson.com/products/${id}`)
@@ -30,6 +32,7 @@ export class ProductPagesComponent implements OnInit {
       });
   }
 
+  //Request for product images
   public imagesOfProducts(id: number){
     this.restService
     .get(`https://dummyjson.com/products/${id}?select=images`)
@@ -39,13 +42,26 @@ export class ProductPagesComponent implements OnInit {
     })
   }
 
+  // Data reques for the Carousel
+  public cargarDataOfProducts() {
+    this.restService
+      .get('https://dummyjson.com/products/?limit=10')
+      .subscribe((data) => {
+        this.listOfProducts = Object.values(data);
+        console.log(this.listOfProducts);
+      });
+  }
+
+  // Next & Previous Buttons || increment and decrement the value of the id variable
   public next(){
     this.id = this.id + 1;
+    this.ngOnInit();
     console.log(this.id)
   }
 
   public previous(){
     this.id = this.id - 1;
+    this.ngOnInit();
     console.log(this.id)
   }
 }
