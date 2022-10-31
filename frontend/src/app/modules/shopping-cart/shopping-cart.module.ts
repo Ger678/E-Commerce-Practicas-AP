@@ -19,7 +19,7 @@ import { faArrowDown as faArrowDown, faStar as faStar } from '@fortawesome/free-
   ]
 })
 export class ShoppingCartModule {
-  constructor (library: FaIconLibrary) {
-    library.addIcons(faArrowDown, faStar);
-  }
+  /* constructor (library: FaIconLibrary) {
+    library.addIcons(faStar);
+  } */
 }

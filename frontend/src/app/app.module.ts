@@ -22,8 +22,8 @@ import { faArrowDown as faArrowDown } from '@fortawesome/free-solid-svg-icons';
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {
+export class AppModule {/* 
   constructor (library: FaIconLibrary) {
     library.addIcons(faArrowDown);
-  }
+  } */
 }
