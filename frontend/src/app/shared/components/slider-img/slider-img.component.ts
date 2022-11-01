@@ -23,12 +23,11 @@ export class SliderImgComponent implements OnInit {
     
   }
 
-  public getCategory() {
+  public async getCategory () {
     this.restService.get('https://dummyjson.com/products/categories').subscribe(data => {
       this.categoryList = data;
     })
-    this.getThumbnailsOfCategory(this.categoryList);
-    console.log(this.categoryList);
+    let categories = await this.getThumbnailsOfCategory(this.categoryList)
   }
 
   public getThumbnailsOfCategory(categories: any[]) {  
@@ -46,4 +45,5 @@ export class SliderImgComponent implements OnInit {
     console.log("Categorias: " + this.categoryList)
   }
 
+  // async, await || .then
 }
