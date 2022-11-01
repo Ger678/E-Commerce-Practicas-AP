@@ -18,6 +18,7 @@ import { faStar as faStar } from '@fortawesome/free-solid-svg-icons';
     FontAwesomeModule
   ]
 })
+
 export class ShoppingCartModule {
   constructor (library: FaIconLibrary) {
     library.addIcons(faStar);

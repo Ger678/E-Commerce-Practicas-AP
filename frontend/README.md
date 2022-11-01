@@ -14,3 +14,31 @@ Run `ng generate component component-name` to generate a new component. You can 
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+
+## Add FontAwesone
+
+npm install @fortawesome/angular-fontawesome
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-brands-svg-icons
+npm install @fortawesome/free-regular-svg-icons
+npm install @fortawesome/free-solid-svg-icons
+
+en app.module.ts 
+
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
+import { faArrowDown as faArrowDown } from '@fortawesome/free-solid-svg-icons';
+
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FontAwesomeModule
+  ],
+  export class AppModule {
+  constructor (library: FaIconLibrary) {
+    library.addIcons(faArrowDown);
+  }
+}
+
+ejemplo de uso:
+<fa-icon [icon]="['fas','arrow-down']"></fa-icon>

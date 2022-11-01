@@ -4,9 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './modules/home/home.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faArrowDown as faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -16,14 +14,12 @@ import { faArrowDown as faArrowDown } from '@fortawesome/free-solid-svg-icons';
     CoreModule,
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
     HomeModule,
-    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
-  constructor (library: FaIconLibrary) {
-    library.addIcons(faArrowDown);
-  }
+
 }

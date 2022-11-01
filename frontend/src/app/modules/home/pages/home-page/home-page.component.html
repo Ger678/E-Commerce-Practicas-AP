@@ -2,39 +2,12 @@
 <!-- Home imagen -->
 <img src="assets/Home.png" class="my-5">
 <!-- Search Inpunt -->
-<div class="container-fluid " >
-    <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-</div>
+<app-search></app-search>
 <!-- TODO Category  -->
-<button class="btn btn-primary h-25 w-25" (click)="getThumbnailsOfCategory(categoryList)" ></button>
-<div id="category" class="my-5 mx-3 d-flex" >
-    <div id="category-item" class="mx-3 row" *ngFor="let category of categoryList" >
-        <img ngModel="thumbnailList" src={{thumbnailList.products}}} class="rounded-circle shadow p-0" style=" height: 60px ">
-        <p class="text-center" style="font-size: x-small">{{category}}</p>
-    </div>
-</div>
+<app-slider-img [listOfItems]="listOfProducts"></app-slider-img>
 
+<app-card-list [listOfItems]="listOfProducts" ></app-card-list>
 <!-- Cards -->
-<div ngModel="singleProduct" class="d-flex justify-content-center my-3">
-    <div class="card shadow" style="width: 18rem;">
-        <img src={{singleProduct.thumbnail}} class="card-img-top" alt={{singleProduct.title}}>
-        <div class="card-body">
-            <p class="card-text">{{singleProduct.description}}</p>
-        </div>
-    </div>
-</div>
-
-<div *ngFor="let products of listOfProducts[0]" class="d-flex justify-content-center my-3">
-    <div class="card shadow" style="width: 18rem;">
-        <img src={{products.thumbnail}} class="card-img-top" alt={{products.title}}>
-        <div class="card-body">
-            <p class="card-text">{{products.description}}</p>
-        </div>
-    </div>
-</div>
 
 <!-- TODO faltaría modularizar en varios sub componentes  -->
 <!-- TODO deberíamos intentar unificar nombres, inglés, español? detallado, resumido, etc  -->
