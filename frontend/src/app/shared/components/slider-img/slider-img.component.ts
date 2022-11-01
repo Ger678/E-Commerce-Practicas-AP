@@ -10,24 +10,17 @@ export class SliderImgComponent implements OnInit {
 
   @Input() thumbnailList: any = [];
   public categoryList: any = [];
+  public url: string = 'https://dummyjson.com/products/categories';
 
   constructor( private restService: RestService) { }
 
-  ngOnInit(): void {
-    this.getCategory();
-    /*if (this.getThumbnailsOfCategory(this.categoryList) == undefined) {
-      this.getCategory();
-      console.log("Lista: " + this.thumbnailList)
-      console.log("Categorias: " + this.categoryList)
-    } */
-    
+  ngOnInit(): void { 
   }
 
-  public async getCategory () {
-    this.restService.get('https://dummyjson.com/products/categories').subscribe(data => {
+  public getCategory (url: string) {
+    return this.restService.get(url).subscribe(data => {
       this.categoryList = data;
     })
-    let categories = await this.getThumbnailsOfCategory(this.categoryList)
   }
 
   public getThumbnailsOfCategory(categories: any[]) {  
