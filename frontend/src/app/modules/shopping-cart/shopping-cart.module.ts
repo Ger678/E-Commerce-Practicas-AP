@@ -18,6 +18,7 @@ import { faArrowDown as faArrowDown, faStar as faStar } from '@fortawesome/free-
     FontAwesomeModule
   ]
 })
+
 export class ShoppingCartModule {
   constructor (library: FaIconLibrary) {
     library.addIcons(faArrowDown, faStar);

@@ -1,0 +1,13 @@
+<div id="category" class="my-5 mx-3 d-flex" >
+  <div id="category-item" class="mx-3 row" *ngFor="let items of listOfItems[0]" >
+      <img src={{items.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
+      <p class="text-center" style="font-size: x-small">{{items.title}}</p>
+  </div>
+</div>
+
+<!-- <div id="category" class="my-5 mx-3 d-flex" >
+  <div id="category-item" class="mx-3 row" *ngFor="let products of listOfProducts[0]" >
+      <img src={{products.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
+      <p class="text-center" style="font-size: x-small">{{products.title}}</p>
+  </div>
+</div> -->
