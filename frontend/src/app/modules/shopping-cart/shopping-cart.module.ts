@@ -4,7 +4,7 @@ import { CartPageComponent } from './pages/cart-page/cart-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { faArrowDown as faArrowDown, faStar as faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as faStar } from '@fortawesome/free-solid-svg-icons';
 
 
 
@@ -19,7 +19,7 @@ import { faArrowDown as faArrowDown, faStar as faStar } from '@fortawesome/free-
   ]
 })
 export class ShoppingCartModule {
-  /* constructor (library: FaIconLibrary) {
+  constructor (library: FaIconLibrary) {
     library.addIcons(faStar);
-  } */
+  }
 }
