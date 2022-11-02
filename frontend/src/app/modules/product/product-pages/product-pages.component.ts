@@ -52,16 +52,30 @@ export class ProductPagesComponent implements OnInit {
       });
   }
 
-  // Next & Previous Buttons || increment and decrement the value of the id variable
-  public next(){
-    this.id = this.id + 1;
-    this.ngOnInit();
-    console.log(this.id)
+  onChangeItem(direction: String) {
+    console.log(direction)
+    if (direction == "next") {
+      this.id = this.id + 1;
+      this.ngOnInit();
+      console.log(this.id)
+    } else {
+      this.id = this.id - 1;
+      this.ngOnInit(); //que hace este comando?
+      console.log(this.id)
+    }
   }
 
-  public previous(){
-    this.id = this.id - 1;
-    this.ngOnInit();
-    console.log(this.id)
-  }
+  // Next & Previous Buttons || increment and decrement the value of the id variable
+  // public next(){
+    // this.id = this.id + 1;
+    // this.ngOnInit();
+    // console.log(this.id)
+  // }
+
+  // public previous(){
+    // this.id = this.id - 1;
+    // this.ngOnInit(); //que hace este comando?
+    // console.log(this.id)
+  // }
+
 }

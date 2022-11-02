@@ -7,7 +7,14 @@
 }
 .carousel-container .carousel-images{
   flex: 0 0 100%;
-  padding: 24px;
   scroll-snap-align: start;
-  width: 350px;
+  width: 150px;
+}
+
+.fa-star{
+  color: rgb(216, 216, 216);
+}
+
+.checked{
+  color: yellow;
 }

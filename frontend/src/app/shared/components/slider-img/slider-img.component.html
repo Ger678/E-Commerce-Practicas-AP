@@ -1,6 +1,6 @@
-<div id="category" class="my-5 mx-3 d-flex" >
-  <div id="category-item" class="mx-3 row" *ngFor="let item of listOfItems" >
-      <img *ngIf="images" src={{item}} class="rounded-circle shadow p-0" style=" height: 60px ">
+<div id="slider" class="mx-2 px-5 " [ngClass]="images ? '' : 'my-5 mx-3 d-flex' " >
+  <div id="slider-item" class="" *ngFor="let item of listOfItems" [ngClass]="images ? '' : 'mx-3 row' " >
+      <img *ngIf="images" src={{item}} class="carousel-images my-5 shadow rounded">
       <img *ngIf="!images" src={{item.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
       <p *ngIf="!images" class="text-center" style="font-size: x-small">{{item.title}}</p>
   </div>
