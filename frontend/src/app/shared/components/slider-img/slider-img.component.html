@@ -1,7 +1,8 @@
 <div id="category" class="my-5 mx-3 d-flex" >
-  <div id="category-item" class="mx-3 row" *ngFor="let items of listOfItems[0]" >
-      <img src={{items.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
-      <p class="text-center" style="font-size: x-small">{{items.title}}</p>
+  <div id="category-item" class="mx-3 row" *ngFor="let item of listOfItems" >
+      <img *ngIf="images" src={{item}} class="rounded-circle shadow p-0" style=" height: 60px ">
+      <img *ngIf="!images" src={{item.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
+      <p *ngIf="!images" class="text-center" style="font-size: x-small">{{item.title}}</p>
   </div>
 </div>
 

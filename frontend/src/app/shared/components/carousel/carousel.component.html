@@ -1,0 +1,16 @@
+<!-- Carousel -->
+<h1>Otros Productos</h1>
+<div class="carousel-container mx-3" style="margin-bottom: 150px;">
+ <div *ngFor="let item of listOfItems" class=" d-flex justify-content-center my-3">
+    <div class="card shadow carousel-images" style="width: 18rem;">
+
+        <img src={{item.thumbnail}} class="card-img-top" alt={{item.title}}>
+        <div class="card-body">
+            <p class="card-text">{{item.description}}</p>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="my-5">
+    <div class="my-5"></div>
+</div>
