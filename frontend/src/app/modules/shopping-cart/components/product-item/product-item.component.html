@@ -30,24 +30,27 @@
 </div>
 
 <app-modal [modal]="modal">
-  <p>{{item.category}}</p>
-  <!-- Puntaje de estrellas -->
-  <div class="float-start">
-    <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
-    <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
-    <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
-    <span class="fa fa-star"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
-    <span class="fa fa-star"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
-  </div>
-  <!-- Puntaje de estrellas -->
-  <h3 class="card-subtitle float-end align-self-end" style="font-size:30px; color:rgb(144, 144, 144)">${{item.price}}.00</h3>
-  <h5 class="card-content d-inline-block my-4">{{item.description}}</h5>
+  <img class="img-fluid" src={{item.thumbnail}}>
+  <div class="card-body">
+    <p>{{item.category}}</p>
+    <!-- Puntaje de estrellas -->
+    <div class="float-start">
+      <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+      <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+      <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+      <span class="fa fa-star"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+      <span class="fa fa-star"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+    </div>
+    <!-- Puntaje de estrellas -->
+    <h3 class="card-subtitle float-end align-self-end" style="font-size:30px; color:rgb(144, 144, 144)">${{item.price}}.00</h3>
+    <h5 class="card-content d-inline-block my-4">{{item.description}}</h5>
 
-  <!-- carousel de imagens -->
-  <div class="carousel-container">
-      <div *ngFor="let img of images[1]" >
-          <img ngModel="product" src={{img}} class="carousel-images rounded">
-      </div>
+    <!-- carousel de imagens -->
+    <div class="carousel-container">
+        <div *ngFor="let img of images[1]" >
+            <img ngModel="product" src={{img}} class="carousel-images rounded">
+        </div>
+    </div>
+    <!-- carousel de imagens -->
   </div>
-  <!-- carousel de imagens -->
 </app-modal>
