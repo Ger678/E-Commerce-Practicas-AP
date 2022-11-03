@@ -14,7 +14,7 @@ export class HomePageComponent implements OnInit {
   public categoryList: any = [];
   public thumbnailList: any = [];
 
-  //TODO faltaría model de producto para evitar posibles problemas
+  //TODO faltaría model de producto para evitar posibles problemas, pero quizás directamente cuando ya tengamos nuestra api
 
   constructor(private restService: RestService) {}
 
@@ -28,7 +28,8 @@ export class HomePageComponent implements OnInit {
     this.restService
       .get('https://dummyjson.com/products/?limit=10')
       .subscribe((data) => {
-        this.listOfProducts = Object.values(data);
+  //TODO la url base solo se debería escribir una vez, en el servicio
+        this.listOfProducts = Object.values(data)[0];
         this.listOfProductsModel = Object.values(data);
       });
   }
@@ -42,5 +43,4 @@ export class HomePageComponent implements OnInit {
       });
   }
   //TODO probablemente esto debería estar en un servicio
-  // Rama German
 }

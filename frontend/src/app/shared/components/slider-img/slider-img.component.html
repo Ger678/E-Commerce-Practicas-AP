@@ -1,8 +1,15 @@
-<div id="category" class="my-5 mx-3 d-flex">
-  <div id="category-item" class="mx-3 row" *ngFor="let items of thumbnailList">
-      <img ngModel="thumbnailList" src={{items.thumbnail}} class="rounded-circle shadow p-0" style="object-fit: cover; height: 100px; width: 100px; max-width: fit-content; margin: 10px">   
+<div id="slider" class="mx-2 px-5 " [ngClass]="images ? '' : 'my-5 mx-3 d-flex' " >
+  <div id="slider-item" class="" *ngFor="let item of listOfItems" [ngClass]="images ? '' : 'mx-3 row' " >
+      <img *ngIf="images" src={{item}} class="carousel-images my-5 shadow rounded">
+      <img *ngIf="!images" src={{item.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
+      <p *ngIf="!images" class="text-center" style="font-size: x-small">{{item.title}}</p>
+
+     <!-- <img ngModel="thumbnailList" src={{items.thumbnail}} class="rounded-circle shadow p-0" style="object-fit: cover; height: 100px; width: 100px; max-width: fit-content; margin: 10px">   
       <p class="text-center text-uppercase fs-6" style="font-size: x-small">{{items.category}}</p>
+    -->
   </div>
 </div>
-<button class="btn btn-primary" (click)="getCategory(this.url)">getImg</button>
+     <!-- <button class="btn btn-primary" (click)="getCategory(this.url)">getImg</button>    -->
+     
+<!-- FIX evaluar que queda acá, modificamos los dos -->     
 

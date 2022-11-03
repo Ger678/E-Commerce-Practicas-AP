@@ -1,0 +1,20 @@
+.carousel-container {
+  display: flex;
+  gap: 12px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 24px;
+}
+.carousel-container .carousel-images{
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  width: 150px;
+}
+
+.fa-star{
+  color: rgb(216, 216, 216);
+}
+
+.checked{
+  color: yellow;
+}

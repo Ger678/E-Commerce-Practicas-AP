@@ -1,21 +1,13 @@
-#slider {
+.carousel-container {
   display: flex;
   gap: 12px;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-padding: 24px;
 }
-#slider .carousel-images{
+.carousel-container .carousel-images{
   flex: 0 0 100%;
   padding: 24px;
   scroll-snap-align: start;
   width: 350px;
-}
-#category{
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-padding: 24px;
-}
-#category-item{
-    scroll-snap-align: start;
 }

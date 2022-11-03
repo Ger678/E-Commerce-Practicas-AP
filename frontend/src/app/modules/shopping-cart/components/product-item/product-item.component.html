@@ -1,0 +1,56 @@
+<!-- Componente de Producto en el shopping cart -->
+<div ngModel="cartProduct" class="row mx-4 my-3 rounded shadow" style="height: auto; width:auto; background-color: rgb(223, 223, 223)">
+  <div class="col m-2">
+      <h2 class="text-uppercase my-2">{{item.title}}</h2>
+      <p>{{item.description}}</p>
+      <div class="d-flex">
+          <!-- Inicio del Contador -->
+          <div class="rounded d-flex"
+              style="background: rgb(0, 106, 255); width:60px; height:30px; justify-content: space-between; align-items: center; padding: 5px;">
+              <button (click)="removeAmount()" style="background: none; border: none; display: contents;">
+                  <svg class="justify-content-end" style="color:aliceblue" xmlns="http://www.w3.org/2000/svg"
+                      width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                      <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                  </svg>
+              </button>
+              <h6 style="color:aliceblue; padding:5px;display: contents;">{{amount}}</h6>
+              <button (click)="addAmount()" style="background: none; border: none; display: contents;">
+                  <svg style="color:aliceblue" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                      fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                      <path
+                          d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                  </svg>
+              </button>
+          </div>
+          <!-- Fin del contador -->
+          <h5 class="mx-2">${{price}}.99</h5>
+      </div>
+  </div>
+  <img (click)="ratingStars()" class="col img-thumbnail m-2" style="width: 80px; object-fit: cover;" src={{item.thumbnail}} data-bs-toggle="modal" attr.data-bs-target="#{{idModal}}">
+</div>
+
+<app-modal [modal]="modal">
+  <img class="img-fluid" src={{item.thumbnail}}>
+  <div class="card-body">
+    <p>{{item.category}}</p>
+    <!-- Puntaje de estrellas -->
+    <div class="float-start">
+      <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+      <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+      <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+      <span class="fa fa-star"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+      <span class="fa fa-star"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
+    </div>
+    <!-- Puntaje de estrellas -->
+    <h3 class="card-subtitle float-end align-self-end" style="font-size:30px; color:rgb(144, 144, 144)">${{item.price}}.00</h3>
+    <h5 class="card-content d-inline-block my-4">{{item.description}}</h5>
+
+    <!-- carousel de imagens -->
+    <div class="carousel-container">
+        <div *ngFor="let img of images[1]" >
+            <img ngModel="product" src={{img}} class="carousel-images rounded">
+        </div>
+    </div>
+    <!-- carousel de imagens -->
+  </div>
+</app-modal>
