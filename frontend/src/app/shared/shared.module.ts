@@ -8,8 +8,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { PrevNextButtonsComponent } from './components/prev-next-buttons/prev-next-buttons.component';
 import { ModalComponent } from './components/modal/modal.component';
 
-
-
 @NgModule({
   declarations: [
     SearchComponent,

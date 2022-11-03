@@ -11,3 +11,11 @@
   scroll-snap-align: start;
   width: 350px;
 }
+#category{
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 24px;
+}
+#category-item{
+    scroll-snap-align: start;
+}

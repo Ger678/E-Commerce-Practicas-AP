@@ -10,6 +10,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
+
 @NgModule({
   declarations: [
     CartPageComponent,
@@ -25,6 +26,6 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 export class ShoppingCartModule {
   constructor (library: FaIconLibrary) {
-    library.addIcons(faArrowDown, faStar);
+    library.addIcons(faStar);
   }
 }
