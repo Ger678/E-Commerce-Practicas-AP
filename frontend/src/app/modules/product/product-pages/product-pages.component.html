@@ -1,13 +1,15 @@
 <div class="mb-4"></div>
 
 <!-- Corrousel of images -->
-<div class="carousel-container mx-2 px-5">
+<!-- <div class="carousel-container mx-2 px-5">
     <div *ngFor="let img of images[1]" >
         <img ngModel="product" src={{img}} class="carousel-images my-5 shadow rounded">
     </div>
-</div>
-<!-- Stars -->
+</div> -->
 
+<app-slider-img></app-slider-img>
+
+<!-- Stars -->
 <!-- Title & Description -->
 <div class="card-body mx-3" ngModel="product">
     <h3 class="card-subtitle float-end" style="font-size:50px">${{product.price}}.00</h3>
@@ -16,10 +18,10 @@
 </div>
 
 <!-- Prev & Next buttons -->
-<div class="d-flex justify-content-end my-3 mx-3" role="group" aria-label="Basic mixed styles example">
-    <button type="button" class="btn btn-primary" (click)="previous()"> Prev </button>
-    <button type="button" class="btn btn-primary" (click)="next()"> Next </button>
-</div>
+<app-prev-next-buttons
+  (onClickButton)="onChangeItem($event)"
+>
+</app-prev-next-buttons>
 
 <!-- Bottom buttons -->
 <div class="fixed-bottom">
@@ -29,21 +31,4 @@
     </div>
 </div>
 
-<!-- Carousel -->
-<h1>Otros Productos</h1>
-<div class="carousel-container mx-3" style="margin-bottom: 150px;">
- <div *ngFor="let products of listOfProducts[0]" class=" d-flex justify-content-center my-3">
-    <div class="card shadow carousel-images" style="width: 18rem;">
-
-        <img src={{products.thumbnail}} class="card-img-top" alt={{products.title}}>
-        <div class="card-body">
-            <p class="card-text">{{products.description}}</p>
-        </div>
-        </div>
-    </div>
-</div>
-<div class="my-5">
-    <div class="my-5"></div>
-</div>
-
-  <!--TODO modularizar-->
+<app-carousel [listOfItems]="listOfProducts"></app-carousel>

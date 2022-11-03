@@ -14,13 +14,12 @@ export class HomePageComponent implements OnInit {
   public categoryList: any = [];
   public thumbnailList: any = [];
 
-  //TODO faltaría model de producto para evitar posibles problemas
+  //TODO faltaría model de producto para evitar posibles problemas, pero quizás directamente cuando ya tengamos nuestra api
 
   constructor(private restService: RestService) {}
 
   ngOnInit(): void {
-    // this.cargarDataOfProducts(); // productos de telefonos
-    this.cargarDataOfSeveralProducts(2);
+    this.cargarDataOfProducts(); // productos de telefonos
   }
 
   // Carga la lista de productos

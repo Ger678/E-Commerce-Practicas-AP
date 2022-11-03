@@ -1,17 +1,13 @@
-#slider {
+.carousel-container {
   display: flex;
   gap: 12px;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-padding: 24px;
 }
-#slider .carousel-images{
-  object-fit: cover;
-  height: 100px;
-  width: 100px;
-  max-width: fit-content;
-  margin: 10px;
+.carousel-container .carousel-images{
   flex: 0 0 100%;
   padding: 24px;
   scroll-snap-align: start;
+  width: 350px;
 }
