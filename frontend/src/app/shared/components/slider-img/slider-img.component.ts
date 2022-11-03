@@ -15,12 +15,15 @@ export class SliderImgComponent implements OnInit {
   constructor( private restService: RestService) { }
 
   ngOnInit(): void { 
+    this.getCategory(this.url)
   }
 
   public getCategory (url: string) {
-    return this.restService.get(url).subscribe(data => {
+    this.restService.get(url).subscribe(data => {
       this.categoryList = data;
+      this.getThumbnailsOfCategory(this.categoryList);
     })
+    
   }
 
   public getThumbnailsOfCategory(categories: any[]) {  
