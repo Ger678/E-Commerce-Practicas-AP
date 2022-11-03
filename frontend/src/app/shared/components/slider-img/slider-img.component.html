@@ -1,5 +1,5 @@
 <div id="slider" class="my-5 mx-3 d-flex">
-  <div class="mx-3 row" *ngFor="let items of thumbnailList">
+  <div class="mx-3 row" *ngFor="let items of thumbnailList" (click)="showCategory(items.category)">
       <img router-link="/product" ngModel="thumbnailList" src={{items.thumbnail}} class="carousel-images rounded-circle shadow p-0">   
       <p class="text-center text-uppercase fs-6" style="font-size: x-small">{{items.category}}</p>
   </div>

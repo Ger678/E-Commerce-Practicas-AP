@@ -41,5 +41,9 @@ export class SliderImgComponent implements OnInit {
     console.log("Categorias: " + this.categoryList)
   }
 
+  public showCategory(category: string){
+    console.log("Esta es la Category: " + category)
+  }
+
   // async, await || .then
 }
