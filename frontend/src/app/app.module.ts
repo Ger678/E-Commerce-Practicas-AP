@@ -4,6 +4,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomeModule } from './modules/home/home.module';
+import { ProductModule } from './modules/product/product.module';
+import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -16,6 +18,8 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     SharedModule,
     HomeModule,
+    ProductModule,
+    ShoppingCartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

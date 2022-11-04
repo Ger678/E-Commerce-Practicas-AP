@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductPagesComponent } from './product-pages/product-pages.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 
@@ -11,7 +12,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    BrowserModule
   ]
 })
 export class ProductModule { }
