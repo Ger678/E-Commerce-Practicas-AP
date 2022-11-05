@@ -12,10 +12,10 @@
 <!-- Stars -->
 <!-- Title & Description -->
 <div class="card-body mx-3" ngModel="product">
-    <h3 class="card-subtitle float-end" style="font-size:50px">${{product.price}}.00</h3>
-    <h1 class="card-title" style="font-size: 30px;">{{product.title}}</h1>
-    <p class="card-text">{{product.description}}</p>
-    <button (click)="getCategory()" ></button>
+    <h3 class="card-subtitle float-end" style="font-size:40px; font-weight: 300; color: gray">${{product.price}}.00</h3>
+    <h1 class="card-title" style="font-size: 50px; font-weight: 700; text-transform: uppercase;">{{product.title}}</h1>
+    <p class="card-text mt-2" style="font-weight: 600; color: gray">{{product.description}}</p>
+    <button (click)="showCategory()" ></button>
 </div>
 
 <!-- Prev & Next buttons -->

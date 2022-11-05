@@ -6,15 +6,14 @@ import { Observable, Subject } from 'rxjs';
 })
 export class SliderServiceService {
 
-  public subjectCategory: Subject<string> =new Subject<string>();
+  public subjectCategory: Subject<any> =new Subject<string>();
   public var: any;
 
   constructor() { }
 
-  public sendCategory(category: string){
-    console.log("servicio :" + category);
+  public sendCategory(category: string): void {
+    console.log("servicio: " + category);
     this.subjectCategory.next(category);
-    console.log(this.subjectCategory);
   }
 
   public recibeCategory(): Observable<any>{

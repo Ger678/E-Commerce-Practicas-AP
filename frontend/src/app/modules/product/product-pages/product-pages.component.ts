@@ -12,7 +12,7 @@ export class ProductPagesComponent implements OnInit {
   public listOfProducts: any = [];
   public product: any = [];
   public images: any = [];
-  public id: number = 9;
+  public id: number = 2;
   public category!: string;
 
   constructor(
@@ -24,15 +24,17 @@ export class ProductPagesComponent implements OnInit {
     this.productDetails(this.id);
     this.imagesOfProducts(this.id);
     this.cargarDataOfProducts();
+    this.getCategory();
   }
 
   public getCategory() {
-    console.log('antes del service');
     this.sliderService.recibeCategory().subscribe((d) => {
       this.category = d;
-      console.log('esto');
     });
-    console.log('despues del service');
+  }
+
+  public showCategory(){
+    console.log("Esta es la categoria: " + this.category)
   }
 
   //Request for product details || details: price, description,name

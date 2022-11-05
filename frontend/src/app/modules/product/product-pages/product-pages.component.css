@@ -2,15 +2,15 @@
     display: flex;
     overflow-x: scroll;
     scroll-snap-type: x mandatory;
-    scroll-padding: 24px;
+    scroll-padding: 10px;
   }
   #slider .carousel-images{
     object-fit: cover;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     max-width: fit-content;
     margin: 10px;
     flex: 0 0 100%;
-    scroll-snap-align: start;
+    scroll-snap-align: end;
   }
   
