@@ -7,6 +7,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { PrevNextButtonsComponent } from './components/prev-next-buttons/prev-next-buttons.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 

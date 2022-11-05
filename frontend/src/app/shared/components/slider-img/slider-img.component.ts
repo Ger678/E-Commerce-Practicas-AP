@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { RestService } from 'src/app/core/services/rest.service';
+import { SliderServiceService } from '../../services/slider-service.service';
 
 @Component({
   selector: 'app-slider-img',
@@ -12,7 +14,9 @@ export class SliderImgComponent implements OnInit {
   public categoryList: any = [];
   public url: string = 'https://dummyjson.com/products/categories';
 
-  constructor( private restService: RestService) { }
+  constructor( private restService: RestService,
+    private sliderService: SliderServiceService,
+    private router: Router) { }
 
   ngOnInit(): void { 
     this.getCategory(this.url)
@@ -42,7 +46,9 @@ export class SliderImgComponent implements OnInit {
   }
 
   public showCategory(category: string){
-    console.log("Esta es la Category: " + category)
+    console.log("Esta es la Category: " + category);
+    this.router.navigate(['/product']);
+    this.sliderService.sendCategory(category);
   }
 
   // async, await || .then

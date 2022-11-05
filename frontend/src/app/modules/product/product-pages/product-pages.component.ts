@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from 'src/app/core/models/product.model';
+import { SliderServiceService } from 'src/app/shared/services/slider-service.service';
 import { RestService } from '../service/rest.service';
 
 
@@ -13,8 +13,12 @@ export class ProductPagesComponent implements OnInit {
   public product: any = [];
   public images: any = [];
   public id: number = 9;
+  public category!: string;
 
-  constructor(private restService: RestService) {}
+  constructor(
+    private restService: RestService,
+    private sliderService: SliderServiceService
+  ) {}
 
   ngOnInit(): void {
     this.productDetails(this.id);
@@ -22,24 +26,31 @@ export class ProductPagesComponent implements OnInit {
     this.cargarDataOfProducts();
   }
 
+  public getCategory() {
+    console.log('antes del service');
+    this.sliderService.recibeCategory().subscribe((d) => {
+      this.category = d;
+      console.log('esto');
+    });
+    console.log('despues del service');
+  }
+
   //Request for product details || details: price, description,name
   public productDetails(id: number) {
     this.restService
       .get(`https://dummyjson.com/products/${id}`)
       .subscribe((data) => {
-        console.log(data)
         this.product = data;
       });
   }
 
   //Request for product images
-  public imagesOfProducts(id: number){
+  public imagesOfProducts(id: number) {
     this.restService
-    .get(`https://dummyjson.com/products/${id}?select=images`)
-    .subscribe((data) => {
-      this.images = Object.values(data)[1];
-      console.log(this.images)
-    })
+      .get(`https://dummyjson.com/products/${id}?select=images`)
+      .subscribe((data) => {
+        this.images = Object.values(data)[1];
+      });
   }
 
   // Data reques for the Carousel
@@ -48,11 +59,10 @@ export class ProductPagesComponent implements OnInit {
       .get('https://dummyjson.com/products/?limit=10')
       .subscribe((data) => {
         this.listOfProducts = Object.values(data)[0];
-        console.log(this.listOfProducts);
       });
   }
 
-  onChangeItem(direction: String) {
+  /*   onChangeItem(direction: String) {
     console.log(direction)
     if (direction == "next") {
       this.id = this.id + 1;
@@ -63,19 +73,18 @@ export class ProductPagesComponent implements OnInit {
       this.ngOnInit(); //que hace este comando?
       console.log(this.id)
     }
-  }
+  } */
 
   // Next & Previous Buttons || increment and decrement the value of the id variable
   // public next(){
-    // this.id = this.id + 1;
-    // this.ngOnInit();
-    // console.log(this.id)
+  // this.id = this.id + 1;
+  // this.ngOnInit();
+  // console.log(this.id)
   // }
 
   // public previous(){
-    // this.id = this.id - 1;
-    // this.ngOnInit(); //que hace este comando?
-    // console.log(this.id)
+  // this.id = this.id - 1;
+  // this.ngOnInit(); //que hace este comando?
+  // console.log(this.id)
   // }
-
 }

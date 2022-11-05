@@ -1,0 +1,16 @@
+#slider {
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 24px;
+  }
+  #slider .carousel-images{
+    object-fit: cover;
+    height: 100px;
+    width: 100px;
+    max-width: fit-content;
+    margin: 10px;
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+  }
+  
