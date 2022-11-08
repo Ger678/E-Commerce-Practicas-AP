@@ -26,7 +26,7 @@ export class ProductPagesComponent implements OnInit {
     this.cargarDataOfProducts();
     this.getCategory();
   }
-
+  // FIXME: no puedo solucionar esta funcion
   public getCategory() {
     this.sliderService.recibeCategory().subscribe((d) => {
       this.category = d;
