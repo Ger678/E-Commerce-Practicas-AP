@@ -24,14 +24,14 @@ export class ProductPagesComponent implements OnInit {
     this.productDetails(this.id);
     this.imagesOfProducts(this.id);
     this.cargarDataOfProducts();
-    this.getCategory();
+/*     this.getCategory(); */
   }
 
-  public getCategory() {
+  /* public getCategory() {
     this.sliderService.recibeCategory().subscribe((d) => {
       this.category = d;
     });
-  }
+  } */
 
   public showCategory(){
     console.log("Esta es la categoria: " + this.category)

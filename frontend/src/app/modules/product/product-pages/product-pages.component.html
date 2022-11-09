@@ -1,9 +1,10 @@
-<div class="mb-4"></div>
+<div class="mb-4" style="height:30px"></div>
 
 <!-- Corrousel of images -->
-<div id="slider" class="carousel-container mx-2 px-5">
-    <div *ngFor="let img of images" >
-        <img ngModel="product" src={{img}} class="carousel-images my-5 rounded">
+<img ngModel="product" src={{product.thumbnail}} class="img-responsive m-3" style="width: -webkit-fill-available; border-radius: 15px;">
+<div id="slider" class="carousel-container mx-2 row">
+    <div class="d-flex justify-content-center">
+        <img *ngFor="let img of images" src={{img}} class="carousel-images mb-4 rounded" style="filter:drop-shadow(0px 5px 6px gray)">
     </div>
 </div>
 
@@ -12,6 +13,7 @@
 <!-- Stars -->
 <!-- Title & Description -->
 <div class="card-body mx-3" ngModel="product">
+    <p style="text-transform:uppercase; color:gray">{{product.category}} · <a style="color:rgb(100, 100, 100)"> Otras</a> </p>
     <h3 class="card-subtitle float-end" style="font-size:40px; font-weight: 300; color: gray">${{product.price}}.00</h3>
     <h1 class="card-title" style="font-size: 50px; font-weight: 700; text-transform: uppercase;">{{product.title}}</h1>
     <p class="card-text mt-2" style="font-weight: 600; color: gray">{{product.description}}</p>
@@ -25,7 +27,7 @@
 </app-prev-next-buttons> -->
 
 <!-- Bottom buttons -->
-<div class="fixed-bottom">
+<div class="relative-bottom">
     <div class="d-grid gap-2 d-md-flex align-self-end my-3 mx-3" style="height:110px">
         <button class="btn btn-success me-md-2 h-100" type="button">Button</button>
         <button class="btn btn-outline-primary h-100" type="button" style="background: white">Button</button>
