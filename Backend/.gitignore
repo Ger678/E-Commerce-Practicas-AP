@@ -31,6 +31,9 @@ replay_pid*
 /target
 target/
 */target/**
+/target/
+*/target/**
+**/META-INF/
 Backend/target/classes/
 Backend/target/classes/com/shopAPpracticas/shop/ShopAPpracticasApplication.class
 Backend/target/classes/META-INF/persistence.xml
