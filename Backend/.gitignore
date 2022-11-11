@@ -35,8 +35,8 @@ target/
 */target/*
 */target/**
 **/META-INF/
-/target/**
-**/META-INF/
+Backend/target/**
+Backend/pom.xml
 Backend/target/classes/
 Backend/target/classes/com/shopAPpracticas/shop/ShopAPpracticasApplication.class
 Backend/target/classes/META-INF/persistence.xml
