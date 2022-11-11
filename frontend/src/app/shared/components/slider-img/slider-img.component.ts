@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { RestService } from 'src/app/core/services/rest.service';
 
 @Component({
   selector: 'app-slider-img',
@@ -9,8 +10,9 @@ export class SliderImgComponent implements OnInit {
 
   @Input() listOfItems: any = [];
   @Input() images: Boolean = false;
+  public url: string = 'https://dummyjson.com/products/categories';
   // arrayOfItems: any = []
-  constructor() {
+  constructor( private restService: RestService) {
     // console.log(this.listOfItems)
     // if (this.images == true){
     //   this.arrayOfItems = this.listOfItems[1]
@@ -23,8 +25,30 @@ export class SliderImgComponent implements OnInit {
     // console.log(this.arrayOfItems)
   }
 
-  ngOnInit(): void {
-
+  ngOnInit(): void { 
+    this.getCategory(this.url)
   }
 
+  public getCategory (url: string) {
+    this.restService.get(url).subscribe(data => {
+      this.categoryList = data;
+      this.getThumbnailsOfCategory(this.categoryList);
+    })
+    
+  }
+
+  public getThumbnailsOfCategory(categories: any[]) {  
+    let items: any[] = [];
+    let item: any[] = [];  
+    for (let i = 0; i < categories.length; i++) {
+      this.restService.get(`https://dummyjson.com/products/category/${categories[i]}?select=thumbnail,category&limit=1`).subscribe(data => {
+        let d = Object.values(data)[0];
+        item = d[0];
+        items.push(item);
+      })
+    }
+    this.thumbnailList = items;
+    console.log("Lista: " + this.thumbnailList)
+    console.log("Categorias: " + this.categoryList)
+  }
 }

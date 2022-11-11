@@ -10,7 +10,7 @@ export class CartPageComponent implements OnInit {
   public cartProduct: any = [];
   public id: number = 2;
   public amount: number = 1;
-  public price: number = this.cartProduct.price;
+  public price: any = 0;
   public images: any = [];
   public modalBody: any;
 
@@ -27,6 +27,7 @@ export class CartPageComponent implements OnInit {
       this.cartProduct = data
     })
   }
+
 
   // // Sube la cantidad de productos e incremeta el precio
   // public addAmount(){
