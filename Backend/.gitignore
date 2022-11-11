@@ -32,7 +32,10 @@ replay_pid*
 target/
 */target/**
 /target/
+*/target/*
 */target/**
+**/META-INF/
+/target/**
 **/META-INF/
 Backend/target/classes/
 Backend/target/classes/com/shopAPpracticas/shop/ShopAPpracticasApplication.class
