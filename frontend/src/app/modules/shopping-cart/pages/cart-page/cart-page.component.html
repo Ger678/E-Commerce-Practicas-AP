@@ -13,8 +13,7 @@
 
 <!--TODO Modal cambiar a un componente-->
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header" ngModel="cartProduct">
@@ -25,7 +24,6 @@
           <img class="img-fluid" src={{cartProduct.thumbnail}}>
           <div class="card-body">
             <p>{{cartProduct.category}}</p>
-            <!-- Puntaje de estrellas -->
             <div class="float-start">
               <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
               <span class="fa fa-star checked"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
@@ -34,17 +32,14 @@
               <span class="fa fa-star"> <fa-icon [icon]="['fas','star']"></fa-icon></span>
 
             </div>
-            <!-- Puntaje de estrellas -->
             <h3 class="card-subtitle float-end align-self-end" style="font-size:30px; color:rgb(144, 144, 144)">${{cartProduct.price}}.00</h3>
             <h5 class="card-content d-inline-block my-4">{{cartProduct.description}}</h5>
 
-            <!-- carousel de imagens -->
             <div class="carousel-container">
                 <div *ngFor="let img of images[1]" >
                     <img ngModel="product" src={{img}} class="carousel-images rounded">
                 </div>
             </div>
-            <!-- carousel de imagens -->
 
           </div>
         </div>
@@ -54,7 +49,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
-  <!--TODO modularizar-->
 
