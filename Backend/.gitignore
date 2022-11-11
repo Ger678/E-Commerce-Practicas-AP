@@ -29,6 +29,8 @@ replay_pid*
 /application.properties
 /src/main/resources/
 /target
+target/
+*/target/**
 Backend/target/classes/
 Backend/target/classes/com/shopAPpracticas/shop/ShopAPpracticasApplication.class
 Backend/target/classes/META-INF/persistence.xml
