@@ -1,3 +1,22 @@
-/home/pablo/Documentos/Proyectos/Argentina Programa/JAVA/PracticasAP2022/shop/src/main/java/com/shopAPpracticas/shop/controller/product.java
-/home/pablo/Documentos/Proyectos/Argentina Programa/JAVA/PracticasAP2022/shop/src/main/java/com/shopAPpracticas/shop/ShopAPpracticasApplication.java
-/home/pablo/Documentos/Proyectos/Argentina Programa/JAVA/PracticasAP2022/shop/src/main/java/com/shopAPpracticas/shop/model/product.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\controller\UserController.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\controller\CustomerController.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\model\ProductModel.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\services\ICustomerService.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\services\CustomerService.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\services\UserService.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\repository\CustomerRepository.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\services\IProductService.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\ShopAPpracticasApplication.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\controller\ProductController.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\repository\UserRepository.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\controller\CategoryController.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\services\IUserService.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\model\CustomerModel.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\repository\CategoryRepository.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\model\UserModel.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\services\ICategoryService.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\repository\ProductRepository.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\model\CartModel.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\services\CategoryService.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\services\ProductService.java
+D:\PracticasAP\E-Commerce-Practicas-AP\Backend\src\main\java\com\shopAPpracticas\shop\model\CategoryModel.java
