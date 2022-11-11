@@ -47,4 +47,5 @@ Thumbs.db
 /application.properties
 /src/main/resources/
 /target
+/target/classes/
 Backend/target/classes/com/shopAPpracticas/shop/ShopAPpracticasApplication.class
