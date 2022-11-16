@@ -9,8 +9,6 @@ import { PrevNextButtonsComponent } from './components/prev-next-buttons/prev-ne
 import { ModalComponent } from './components/modal/modal.component';
 import { FixedButtonComponent } from './components/fixed-button/fixed-button.component';
 
-
-
 @NgModule({
   declarations: [
     SearchComponent,

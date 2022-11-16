@@ -10,23 +10,37 @@ import { RestService } from '../../service/rest.service';
 export class HomePageComponent implements OnInit {
   public listOfProducts: any = [];
   public listOfProductsModel: Product[] = [];
+  public singleProduct: any = [];
+  public categoryList: any = [];
+  public thumbnailList: any = [];
 
   //TODO faltaría model de producto para evitar posibles problemas, pero quizás directamente cuando ya tengamos nuestra api
 
   constructor(private restService: RestService) {}
 
   ngOnInit(): void {
-    this.cargarDataOfProducts(); // productos de telefonos
+    // this.cargarDataOfProducts(); // productos de telefonos
+    this.cargarDataOfSeveralProducts(2);
   }
 
+  // Carga la lista de productos
   public cargarDataOfProducts() {
     this.restService
       .get('https://dummyjson.com/products/?limit=10')
       .subscribe((data) => {
+  //TODO la url base solo se debería escribir una vez, en el servicio
         this.listOfProducts = Object.values(data)[0];
-        console.log(this.listOfProducts);
+        this.listOfProductsModel = Object.values(data);
       });
   }
 
-  //TODO la url base solo se debería escribir una vez, en el servicio
+  // Busca el detalle de un producto
+  public cargarDataOfSeveralProducts(id: number) {
+    this.restService
+      .get(`https://dummyjson.com/products/${id}`)
+      .subscribe((data) => {
+        this.singleProduct = data;
+      });
+  }
+  //TODO probablemente esto debería estar en un servicio
 }

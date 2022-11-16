@@ -16,7 +16,11 @@ export class CartPageComponent implements OnInit {
   public shipping: number = 1;
   //public price: number = this.cartProduct.price;
   //public images: any = [];
-  public modalBody: any;
+  //public id: number = 2;
+  //public amount: number = 1;
+  //public price: any = 0;
+  //public images: any = [];
+  //public modalBody: any;
 
   constructor(private shoppingCartService: ShoppingCartService, private restService: RestService) {
 
@@ -59,6 +63,7 @@ export class CartPageComponent implements OnInit {
   //TODO Cuentas de Totales
   //TODO Eliminar productos agregados
   //FIXME evitar que agregue dos veces el mismo producto al carrito
+
   // // Sube la cantidad de productos e incremeta el precio
   public getTotals(){
     let amount = 0
