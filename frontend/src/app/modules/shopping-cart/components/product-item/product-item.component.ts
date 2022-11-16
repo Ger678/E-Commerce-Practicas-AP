@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ShoppingCartService } from 'src/app/core/services/shopping-cart.service';
 import { RestService } from '../../service/rest.service';
 
 @Component({
@@ -11,13 +12,13 @@ export class ProductItemComponent implements OnInit {
   @Input() item: any = {};
   @Input() idModal: string = "";
   @Input() modalBody: any ;
+  @Output() updateCart: EventEmitter<boolean> = new EventEmitter()
   public id: number = 2;
-  public amount: number = 1;
-  public price: number = this.item.price;
+  public price: number = 0.99;
   public images: any = [];
   public modal: object
 
-  constructor(private restService: RestService) {
+  constructor(private restService: RestService, private shoppingCartService: ShoppingCartService) {
     this.modal =
     {
       "id": "id",
@@ -31,11 +32,12 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
     this.ratingStars();
     this.imagesOfProducts(this.id)
+    this.price = this.item.price * this.item.amount
 
   }
 
   ngAfterViewChecked(){
-    console.log(this.item)
+    //console.log(this.item)
     this.modal =
     {
       "id": this.idModal,
@@ -44,21 +46,42 @@ export class ProductItemComponent implements OnInit {
       "cancelButton": "Cerrar",
       "aceptButton": "Aceptar",
     }
-    console.log(this.modal)
+    //console.log(this.modal)
   }
 
     // Sube la cantidad de productos e incremeta el precio
     public addAmount(){
-      this.amount += 1;
-      this.price = this.item.price * this.amount;
-      console.log(this.price)
+      this.shoppingCartService.addCart(this.item);
+      this.item.amount += 1;
+      this.price = this.item.price * this.item.amount;
+      //FIXME al cambiar la cantidad de un producto vuelvo a cargar todo el carrito,
+      //convendría que amount se maneje directamente desde la página de carrito quizás
+      this.updateCart.emit(true);
+      //console.log(this.item.price)
+      //console.log(this.price)
     }
 
     // Reduce la cantidad de productos y decrementa el precio
     public removeAmount() {
-      this.amount -= 1;
-      this.price -= this.item.price;
-      console.log(this.price)
+      if (this.item.amount == 0 ) {
+        //no se puede restar más, amount no puede ser negativo
+        console.log("amount debe ser positivo")
+      } else if(this.item.amount == 1 ){
+        //si amount es uno y se elima se elimina el item, confirm modal
+        if(confirm("seguro que quiere eliminar el item?")){
+          //elimino item
+          this.shoppingCartService.deleteItemCart(this.item)
+          console.log("Elimino Item")
+          this.updateCart.emit(true);
+        } else{
+          console.log("Cancelo")
+        }
+      } else {
+        this.shoppingCartService.substractCart(this.item);
+        this.item.amount -= 1;
+        this.price -= this.item.price;
+        this.updateCart.emit(true);
+      }
     }
 
     public ratingStars() {

@@ -7,6 +7,7 @@ import { CardListComponent } from './components/card-list/card-list.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { PrevNextButtonsComponent } from './components/prev-next-buttons/prev-next-buttons.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { FixedButtonComponent } from './components/fixed-button/fixed-button.component';
 
 
 
@@ -18,13 +19,14 @@ import { ModalComponent } from './components/modal/modal.component';
     CardListComponent,
     CarouselComponent,
     PrevNextButtonsComponent,
-    ModalComponent
+    ModalComponent,
+    FixedButtonComponent
   ],
   imports: [
     CommonModule
   ],
   exports:  [ CommonModule, SearchComponent,  SliderImgComponent,
     CardComponent,  CardListComponent, CarouselComponent,  PrevNextButtonsComponent,
-    ModalComponent]
+    ModalComponent,     FixedButtonComponent]
 })
 export class SharedModule { }

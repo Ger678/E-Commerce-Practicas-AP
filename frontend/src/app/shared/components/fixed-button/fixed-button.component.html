@@ -1,0 +1,23 @@
+<div class="fixed-bottom">
+  <div
+    class="d-grid gap-2 d-md-flex align-self-end my-3 mx-3"
+    [style]="{'height': (double == true) ? '110px' : '55px'}"
+  >
+      <button
+        class="btn btn-success me-md-2 h-100"
+        type="button"
+        (click)="buttonClick(1)"
+      >
+        {{ FirstButton }}
+      </button>
+      <button
+        class="btn btn-outline-primary h-100"
+        *ngIf="double"
+        type="button"
+        style="background: white"
+        (click)="buttonClick(2)"
+      >
+      {{ SecondButton }}
+      </button>
+  </div>
+</div>

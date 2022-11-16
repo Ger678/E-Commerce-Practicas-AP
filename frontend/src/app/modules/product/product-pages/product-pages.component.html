@@ -24,11 +24,6 @@
 </app-prev-next-buttons>
 
 <!-- Bottom buttons -->
-<div class="fixed-bottom">
-    <div class="d-grid gap-2 d-md-flex align-self-end my-3 mx-3" style="height:110px">
-        <button class="btn btn-success me-md-2 h-100" type="button">Button</button>
-        <button class="btn btn-outline-primary h-100" type="button" style="background: white">Button</button>
-    </div>
-</div>
+<app-fixed-button [double]=true (onClick)="onComprar($event)" ></app-fixed-button>
 
 <app-carousel [listOfItems]="listOfProducts"></app-carousel>

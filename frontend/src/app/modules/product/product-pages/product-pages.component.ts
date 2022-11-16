@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/core/models/product.model';
+import { ShoppingCartService } from 'src/app/core/services/shopping-cart.service';
 import { RestService } from '../service/rest.service';
 
 
@@ -14,7 +15,7 @@ export class ProductPagesComponent implements OnInit {
   public images: any = [];
   public id: number = 9;
 
-  constructor(private restService: RestService) {}
+  constructor(private restService: RestService, private shoppingCartService: ShoppingCartService) {}
 
   ngOnInit(): void {
     this.productDetails(this.id);
@@ -65,6 +66,18 @@ export class ProductPagesComponent implements OnInit {
     }
   }
 
+  onComprar(button: number) {
+    console.log(button)
+    if (button == 2) {
+      //Botón agregar al carrito
+      this.shoppingCartService.addCart(this.product)
+    } else if (button == 1) {
+      //Botón comprar
+
+    } else {
+      console.log("error")
+    }
+  }
   // Next & Previous Buttons || increment and decrement the value of the id variable
   // public next(){
     // this.id = this.id + 1;

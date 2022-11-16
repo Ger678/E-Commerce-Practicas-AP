@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ShoppingCartService } from 'src/app/core/services/shopping-cart.service';
 import { RestService } from '../../service/rest.service';
+import { ShoppingCartModule } from '../../shopping-cart.module';
 
 @Component({
   selector: 'app-cart-page',
@@ -8,32 +10,69 @@ import { RestService } from '../../service/rest.service';
 })
 export class CartPageComponent implements OnInit {
   public cartProduct: any = [];
-  public id: number = 2;
-  public amount: number = 1;
-  public price: number = this.cartProduct.price;
-  public images: any = [];
+  public idArray: number[] = [];
+  public productArray: any = [];
+  public total: number = 0;
+  public shipping: number = 1;
+  //public price: number = this.cartProduct.price;
+  //public images: any = [];
   public modalBody: any;
 
-  constructor(private restService: RestService) {
+  constructor(private shoppingCartService: ShoppingCartService, private restService: RestService) {
 
   }
 
   ngOnInit(): void {
-    this.getData(this.id)
-  }
-  // Datos del producto con Id
-  public getData(id: number){
-    this.restService.get(`https://dummyjson.com/products/${id}`).subscribe(data => {
-      this.cartProduct = data
-    })
+
+    //Provisionalmente defino los productos manualmente
+    //TODO: agregar productos al carrito desde página de productos
+
+    // this.idArray.forEach(id => {
+    //   this.getData(id);
+    // })
+    // setInterval(()=>{this.shoppingCartService.setCart(this.productArray)},2000)
+
+    //Obtengo productos que están en el carrito (desde localStorage o desde Base de datos)
+    this.onUpdateCart()
+    //obtengo una lista de los productos y su cantidad
   }
 
+  // Datos del producto con Id
+  //Esto no va a estar acá
+  public getData(id: number){
+    // this.restService.get(`https://dummyjson.com/products/${id}`).subscribe(data => {
+    // console.log(data)
+    // this.productArray.push(data)
+    // })
+  }
+
+  public continuarCompra(){
+    console.log("continuar compra")
+  }
+
+  onUpdateCart(){
+    console.log("update cart")
+    this.cartProduct = this.shoppingCartService.getCart()
+    this.getTotals()
+  }
+
+  //TODO Cuentas de Totales
+  //TODO Eliminar productos agregados
+  //FIXME evitar que agregue dos veces el mismo producto al carrito
   // // Sube la cantidad de productos e incremeta el precio
-  // public addAmount(){
-  //   this.amount += 1;
-  //   this.price = this.cartProduct.price * this.amount;
-  //   console.log(this.price)
-  // }
+  public getTotals(){
+    let amount = 0
+    this.total = 0
+
+    this.cartProduct.forEach((product: any) => {
+      this.total += product.price * product.amount;
+      amount += product.amount
+    });
+
+    //TODO definir como calcular el envio
+
+    this.shipping = 100 * amount;
+  }
 
   // // Reduce la cantidad de productos y decrementa el precio
   // public removeAmount() {
@@ -54,4 +93,7 @@ export class CartPageComponent implements OnInit {
     //     s.classList.add('checked');
     //   })
     // }
+
+    //TODO Al agregar al carrito agregar mensaje que diga, producto agregado
+    //TODO Falta una forma fácil de ir al carrito (idealmente de ver el carrito mientras se sigue comprando)
 }

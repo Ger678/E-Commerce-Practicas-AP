@@ -18,3 +18,21 @@
 .checked{
     color: yellow;
 }
+
+.resume_cart {
+  height: auto;
+  width: auto;
+  background-color: rgba(194, 238, 233, 0.833);
+}
+
+.resume_cart div {
+  width: 80%;
+}
+.resume_cart div.total {
+  border-top: 2px solid rgb(0, 172, 40);
+}
+
+
+.buffer {
+  height: 100px;
+}
