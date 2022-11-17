@@ -1,16 +1,42 @@
-#slider {
+#slider.list {
   display: flex;
   gap: 12px;
   overflow-x: scroll;
   scroll-snap-type: x mandatory;
   scroll-padding: 24px;
 }
-#slider .carousel-images{
+/* #slider .carousel-images{
+  width: 350px;
+} */
+
+#slider.list .carousel-images{
+  object-fit: cover;
+  height: 100px;
+  width: 100px;
+  max-width: fit-content;
+  margin: 10px;
   flex: 0 0 100%;
   padding: 24px;
   scroll-snap-align: start;
-  width: 350px;
 }
+
+#slider.images {
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 10px;
+}
+
+#slider.images .carousel-images{
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+  max-width: fit-content;
+  margin: 10px;
+  flex: 0 0 100%;
+  scroll-snap-align: end;
+}
+
 #category{
     overflow-x: scroll;
     scroll-snap-type: x mandatory;

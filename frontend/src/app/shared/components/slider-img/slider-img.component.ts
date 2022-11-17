@@ -10,8 +10,7 @@ export class SliderImgComponent implements OnInit {
 
   @Input() listOfItems: any = [];
   @Input() images: Boolean = false;
-  thumbnailList: any = [];
-  public url: string = 'https://dummyjson.com/products/categories';
+
   // arrayOfItems: any = []
   constructor( private restService: RestService) {
     // console.log(this.listOfItems)
@@ -27,29 +26,10 @@ export class SliderImgComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.getCategory(this.url)
-  }
-
-  public getCategory (url: string) {
-    this.restService.get(url).subscribe(data => {
-      this.listOfItems = data;
-      this.getThumbnailsOfCategory(this.listOfItems);
-    })
 
   }
 
-  public getThumbnailsOfCategory(categories: any[]) {
-    let items: any[] = [];
-    let item: any[] = [];
-    for (let i = 0; i < categories.length; i++) {
-      this.restService.get(`https://dummyjson.com/products/category/${categories[i]}?select=thumbnail,category&limit=1`).subscribe(data => {
-        let d = Object.values(data)[0];
-        item = d[0];
-        items.push(item);
-      })
-    }
-    this.thumbnailList = items;
-    console.log("Lista: " + this.thumbnailList)
-    console.log("Categorias: " + this.listOfItems)
-  }
+
+
+
 }

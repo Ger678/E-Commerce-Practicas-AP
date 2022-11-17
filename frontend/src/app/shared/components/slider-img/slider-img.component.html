@@ -1,15 +1,17 @@
-<div id="slider" class="mx-2 px-5 " [ngClass]="images ? '' : 'my-5 mx-3 d-flex' " >
+<div id="slider" class=" d-flex'" [ngClass]="images ? 'images mt-5 mx-2 px-5 ' : 'list my-5 mx-3 d-flex' " >
   <div id="slider-item" class="" *ngFor="let item of listOfItems" [ngClass]="images ? '' : 'mx-3 row' " >
-      <img *ngIf="images" src={{item}} class="carousel-images my-5 shadow rounded">
-      <img *ngIf="!images" src={{item.thumbnail}} class="rounded-circle shadow p-0" style=" height: 60px ">
-      <p *ngIf="!images" class="text-center" style="font-size: x-small">{{item.title}}</p>
+      <img *ngIf="images" src={{item}} class="carousel-images mb-4 shadow rounded" style="filter:drop-shadow(0px 5px 6px gray)" >
+      <a routerLink="/product">
+        <img *ngIf="!images" src={{item.thumbnail}} class="rounded-circle shadow p-0" style="height: 60px">
+      </a>
+      <p *ngIf="!images" class="text-center text-uppercase fs-6" style="font-size: x-small">{{item.category}}</p>
 
-     <!-- <img ngModel="thumbnailList" src={{items.thumbnail}} class="rounded-circle shadow p-0" style="object-fit: cover; height: 100px; width: 100px; max-width: fit-content; margin: 10px">   
+     <!-- <img ngModel="thumbnailList" src={{items.thumbnail}} class="rounded-circle shadow p-0" style="object-fit: cover; height: 100px; width: 100px; max-width: fit-content; margin: 10px">
       <p class="text-center text-uppercase fs-6" style="font-size: x-small">{{items.category}}</p>
     -->
   </div>
 </div>
      <!-- <button class="btn btn-primary" (click)="getCategory(this.url)">getImg</button>    -->
-     
-<!-- FIX evaluar que queda acá, modificamos los dos -->     
+
+<!-- FIX evaluar que queda acá, modificamos los dos -->
 

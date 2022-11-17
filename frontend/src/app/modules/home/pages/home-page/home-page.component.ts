@@ -9,6 +9,7 @@ import { RestService } from '../../service/rest.service';
 })
 export class HomePageComponent implements OnInit {
   public listOfProducts: any = [];
+  public listOfCategories: any = [];
   public listOfProductsModel: Product[] = [];
   public singleProduct: any = [];
   public categoryList: any = [];
@@ -19,8 +20,9 @@ export class HomePageComponent implements OnInit {
   constructor(private restService: RestService) {}
 
   ngOnInit(): void {
-    // this.cargarDataOfProducts(); // productos de telefonos
-    this.cargarDataOfSeveralProducts(2);
+    this.cargarDataOfProducts(); // productos de telefonos
+    this.getCategory()
+    //this.cargarDataOfSeveralProducts(2);
   }
 
   // Carga la lista de productos
@@ -41,6 +43,32 @@ export class HomePageComponent implements OnInit {
       .subscribe((data) => {
         this.singleProduct = data;
       });
+  }
+
+  public getCategory () {
+   let url: string = 'https://dummyjson.com/products/categories';
+    this.restService.get(url).subscribe(data => {
+      let categories = Object.values(data);
+      console.log(categories)
+      this.getThumbnailsOfCategory(categories);
+    })
+
+  }
+
+  public getThumbnailsOfCategory(categories: any[]) {
+    console.log(categories)
+    let items: any[] = [];
+    let item: any[] = [];
+    for (let i = 0; i < categories.length; i++) {
+      this.restService.get(`https://dummyjson.com/products/category/${categories[i]}?select=thumbnail,category&limit=1`).subscribe(data => {
+
+        let d = Object.values(data)[0];
+        item = d[0];
+        items.push(item);
+      })
+    }
+    console.log(items)
+    this.listOfCategories = items
   }
   //TODO probablemente esto debería estar en un servicio
 }
