@@ -13,6 +13,7 @@ import java.sql.Date;
 @Table(name="cart")
 public class CartModel implements Serializable {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
 
